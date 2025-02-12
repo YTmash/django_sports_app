@@ -1,0 +1,46 @@
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <link rel = "stylesheet" href="{% static 'sports_app/css/styles.css' %}">
+    {% block title %}
+      <title>Sports App</title>
+    {% endblock %}
+  </head>
+  <body>
+  <nav>
+  <ul>
+    <li><a id="home" href="{% url 'home' %}">Home</a></li>
+    <li><a id="about" href="{% url 'about' %}">About</a></li>
+    <li><a id="contact" href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+  </nav>
+  <h1>Contact Form</h1>
+  <body>
+  <div class="contact-container">
+    <form class="contact-form">
+        <h2>Contact Us</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+        
+        <button type="submit">Send</button>
+    </form>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 MK Mashego</p>
+    </footer>
+    {% block sidebar %}
+      <!-- insert default navigation text for every page -->
+    {% endblock %}
+    {% block content %}
+      <!-- default content text (typically empty) -->
+    {% endblock %}
+  </body>
+</html>

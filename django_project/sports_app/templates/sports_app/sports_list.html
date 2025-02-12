@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports in Manitoba</title>
+</head>
+<body>
+    <h1>Sports You Can Play in Manitoba</h1>
+    <ul>
+        {% for sport in sports %}
+            <li>
+                <h2>{{ sport.name }}</h2>
+                <p>{{ sport.description }}</p>
+                <p><strong>Season:</strong> {{ sport.season }}</p>
+                <p><strong>Indoor:</strong> {{ sport.indoor|yesno:"Yes,No" }}</p>
+                <p><strong>Outdoor:</strong> {{ sport.outdoor|yesno:"Yes,No" }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

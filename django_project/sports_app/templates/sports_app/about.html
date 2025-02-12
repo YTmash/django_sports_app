@@ -1,0 +1,34 @@
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <link rel = "stylesheet" href="{% static 'sports_app/css/styles.css' %}">
+    {% block title %}
+      <title>Sports App</title>
+    {% endblock %}
+  </head>
+  <body>
+  <nav>
+  <ul>
+    <li><a id="home" href="{% url 'home' %}">Home</a></li>
+    <li><a id="about" href="{% url 'about' %}">About</a></li>
+    <li><a id="contact" href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+  </nav>
+  <h1>About Page</h1>
+  <img src="{% static 'sports_app/img/canada_flag.jpg' %}">
+  <p class="about">Manitoba is a haven for sports enthusiasts, offering activities year-round for all ages and skill levels. In summer, enjoy gridiron football, windsurfing and lacrosse in the province’s vibrant outdoor fields and parks. The lakes and rivers provide perfect venues for kayaking, canoeing, and windsurfing. Winter transforms Manitoba into a wonderland for hockey, curling, ice skating, and snowshoeing. Cross-country skiing and snowmobiling are popular adventures, while community centers host basketball, volleyball, and badminton indoors. From recreational leagues to competitive teams, Manitoba’s diverse sports scene fosters camaraderie, health, and fun in every season. Come play, compete, and explore!</p>
+  <footer class="footer">
+      <p>&copy; 2024 MK Mashego</p>
+  </footer>
+  
+    {% block sidebar %}
+      <!-- insert default navigation text for every page -->
+    {% endblock %}
+    {% block content %}
+      <!-- default content text (typically empty) -->
+    {% endblock %}
+    
+  </body>
+</html>

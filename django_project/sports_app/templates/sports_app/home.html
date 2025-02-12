@@ -1,0 +1,89 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'sports_app/css/styles.css' %}">
+    {% block title %}
+      <title>Sports App</title>
+    {% endblock %}
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a id="home" href="{% url 'home' %}">Home</a></li>
+        <li><a id="about" href="{% url 'about' %}">About</a></li>
+        <li><a id="contact" href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <h1>Home Page</h1>
+    <p class="main-phrase">Sports to play in Canada</p>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+      <img id="slideshow-image" src="{% static 'sports_app/img/lacrosse.jpg' %}" alt="Slideshow Image">
+      
+      <!-- Visible label for the current sport -->
+      <div id="sport-label" class="sport-label">Lacrosse</div>
+
+      <div class="controls">
+        <a class="left" href="javascript:void(0)" onclick="prevSlide()">&#10094;</a>
+        <a class="right" href="javascript:void(0)" onclick="nextSlide()">&#10095;</a>
+      </div>
+    </div>
+
+    {% block sidebar %}
+      <!-- Default navigation text for every page -->
+    {% endblock %}
+
+    {% block content %}
+      <!-- Default content text (typically empty) -->
+    {% endblock %}
+    <footer class="footer">
+      <p>&copy; 2024 MK Mashego</p>
+    </footer>
+
+
+    <script>
+      // Define an array of image paths and their corresponding sport labels
+      const images = [
+        { src: "{% static 'sports_app/img/lacrosse.jpg' %}", label: "Lacrosse" },
+        { src: "{% static 'sports_app/img/curling.jpg' %}", label: "Curling" },
+        { src: "{% static 'sports_app/img/gridiron.jpg' %}", label: "Gridiron" },
+        { src: "{% static 'sports_app/img/people-windsurfing-2754957.jpg' %}", label: "Windsurfing" }
+      ];
+
+      let currentIndex = 0; // Start with the first image
+
+      // Function to change the image and label
+      function changeImage() {
+        const imageElement = document.getElementById("slideshow-image");
+        const labelElement = document.getElementById("sport-label");
+
+        currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+        imageElement.src = images[currentIndex].src; // Change image
+        labelElement.textContent = images[currentIndex].label; // Change label
+      }
+
+      // Function to go to the previous image
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        const imageElement = document.getElementById("slideshow-image");
+        const labelElement = document.getElementById("sport-label");
+
+        imageElement.src = images[currentIndex].src;
+        labelElement.textContent = images[currentIndex].label;
+      }
+
+      // Function to go to the next image
+      function nextSlide() {
+        changeImage(); // Use the changeImage function to go to the next image
+      }
+
+      // Change the image every 3 seconds
+      setInterval(changeImage, 3000);
+    </script>
+  </body>
+  
+</html>

@@ -1,0 +1,178 @@
+/* sports_app/static/sports_app/css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    padding-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
+    background-color: #333; 
+}
+
+ul li {
+    margin: 0; /* Remove margins for list items */
+}
+
+ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: red; 
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.main-phrase {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.sport-label {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white; 
+  padding: 20px; 
+  font-size: 2rem;
+  font-weight: bold; 
+  text-align: center; 
+
+}
+
+
+/* Contact Page - Centered Form */
+.contact-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f4f4f4; 
+    margin: 0;
+    padding: 0;
+}
+
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #1a252f;
+}
+
+
+/* About Page - Centered Form */
+.about {
+    font-size: 2.5rem;
+}
+
+
+/* Slideshow styles */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Control buttons */
+.controls a {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 24px;
+  padding: 16px;
+  margin-top: -22px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.controls .left {
+  left: 0;
+}
+
+.controls .right {
+  right: 0;
+}
+
+.controls a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.footer {
+  text-align: center;
+  background-color: #333; /* Dark background for contrast */
+  color: white; /* White text color */
+  padding: 10px; /* Add some padding */
+  position: fixed; /* Sticks the footer to the bottom */
+  width: 100%;
+}
+
